@@ -62,3 +62,47 @@ function trollsBeGone(sentence) { // takes a sentence as a parameter
     return newSentence; // after the loop is done it returns the new sentence 
 }
 console.log(trollsBeGone("This website is for losers LOL")) // => returns "Ths wbst s fr lsrs LL"
+
+// Bank Account Summary
+// Make an object named bankInfo with your banking info that includes the keys listed below. Each key should have a number value that can either be negative or positive (e.g. -500 or 500)
+// savings
+// checking
+// moneyMarket
+// creditCard
+// Write a function called bankAccountSummary that accepts your bankInfo object as an argument. The function should calculate the total of your bank account and return it.
+// Example expected output:
+// // assume my bankInfo values are: 600, 800, 200, -2000
+// bankAccountSummary(bankInfo) // returns -400
+// Save your bankAccountSummary total to a variable called bankTotal
+// Write another function called inTheRed that accepts your bank account summary total (number) as an argument. The function should return true if your total is less than 0, and false otherwise.
+// Example expected output:
+// // assume my bank total is -400
+// inTheRed(bankTotal) // returns true
+
+let bankInfo = {  // creating an object with keys and values
+    savings: 3500,
+    checking: 500,
+    moneyMarket: 200,
+    creditCard: -500
+};
+
+function bankAccountSummary(bankInfo) { // taking that object and adding them together
+    let totalBalance = 0; // creates starts the totalBalance at 0
+    for (let key in bankInfo) {
+        totalBalance += bankInfo[key] // adds and stores the value of the keys in totalBalance
+        }
+    return totalBalance; 
+}
+
+let bankTotal = bankAccountSummary(bankInfo); // save the result of bankAccountSummary to bankTotal
+
+function inTheRed(totalBalance) { // creates a true or false stating if you balance is more than 0
+    if (totalBalance < 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log("Bank total:", bankTotal); // shows the total
+console.log("In the red:", inTheRed(bankTotal)); // pass bankTotal as argument to inTheRed
