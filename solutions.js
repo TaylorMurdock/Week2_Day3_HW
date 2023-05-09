@@ -8,3 +8,21 @@
 // setAlarm(false, false) // => returns false
 // setAlarm(false, true) // => returns false
 // setAlarm(true, false) // => returns true
+
+function setAlarm(employed, vacationing) {
+    if (employed && !vacationing) {  // if employed and not vacationing (! means false) return true
+        return true; 
+    } else { // you are employed and on vacation. You are not employed and not on vacation. You are not employed and on vacation.
+        return false;
+    }
+}
+
+setAlarm(true, true) // => returns false (working and not vacationing)
+console.log(setAlarm(true, true))
+setAlarm(false, false) // => returns false (not working and not vacationing)
+console.log(setAlarm(false, false))
+setAlarm(false, true) // => returns false (not working and vacationing )
+console.log(setAlarm(false, true))
+setAlarm(true, false) // => returns true (working and not vacationing)
+console.log(setAlarm(true, false))
+
