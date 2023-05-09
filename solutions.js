@@ -44,3 +44,21 @@ oddNumberCount(7) // => returns 3 (because [1, 3, 5] are the positive odd number
 console.log(oddNumberCount(7))
 oddNumberCount(16) // => returns 8 (because [1, 3, 5, 7, 9, 11, 13, 15] are the positive odd numbers below 16)
 console.log(oddNumberCount(16))
+
+// Disemvoweling Trolls
+// Trolls are attacking your comment section! Let's neutralize the threat by removing all vowels from their comments. That'll make them look real silly.
+// Write a function named trollsBeGone which receives one argument that should be a sentence (a string). The function should return a new string with all the vowels removed from the original string.
+// Example expected output:
+// trollsBeGone("This website is for losers LOL") // => returns "Ths wbst s fr lsrs LL"
+
+function trollsBeGone(sentence) { // takes a sentence as a parameter 
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']; // creates an array of vowels upper and lower case
+    let newSentence  = ""; // a new string where the new sentence with no vowels will be held
+    for (i=0; i < sentence.length; i +=1) { //runs through the sentence 
+        if (!vowels.includes(sentence[i])) { //if the letter the loop is on is not a vowel then store it in newSentence 
+            newSentence += sentence[i]
+        }
+    }
+    return newSentence; // after the loop is done it returns the new sentence 
+}
+console.log(trollsBeGone("This website is for losers LOL")) // => returns "Ths wbst s fr lsrs LL"
